@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Routes - SmartBus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#64748b',
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <i class="fas fa-bus text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-semibold text-gray-900">SmartBus</span>
+                    </a>
+                </div>
+                <div class="hidden sm:flex sm:items-center sm:space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Schedules</a>
+                    <a href="routes.html" class="text-primary px-3 py-2 text-sm font-medium">Routes</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Blog</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="flex items-center sm:hidden">
+                    <button type="button" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Section -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-6">Find Your Route</h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Route Number</label>
+                    <div class="relative">
+                        <input type="text" placeholder="e.g., 101" class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                        <i class="fas fa-bus absolute left-3 top-2.5 text-gray-400"></i>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">From</label>
+                    <div class="relative">
+                        <input type="text" placeholder="Starting point" class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                        <i class="fas fa-map-marker-alt absolute left-3 top-2.5 text-gray-400"></i>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">To</label>
+                    <div class="relative">
+                        <input type="text" placeholder="Destination" class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                        <i class="fas fa-map-marker absolute left-3 top-2.5 text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-end">
+                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                    <i class="fas fa-search mr-2"></i>
+                    Search Routes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Routes -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Popular Routes</h2>
+        <div class="grid gap-6">
+            <!-- Route Card 1 -->
+            <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-semibold">
+                            101
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">Downtown Express</h3>
+                            <p class="text-gray-600">Central Station → Business District → Airport</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm text-gray-600 space-y-1">
+                            <p><i class="far fa-clock mr-2"></i>Every 15 mins</p>
+                            <p><i class="far fa-calendar mr-2"></i>Mon - Sun</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock mr-2 text-primary"></i>
+                                First bus: 5:00 AM
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock mr-2 text-primary"></i>
+                                Last bus: 11:30 PM
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-4 w-full bg-gray-50 text-primary font-medium py-2 rounded-lg hover:bg-gray-100 transition-colors">
+                        View Full Schedule
+                    </button>
+                </div>
+            </div>
+
+            <!-- Route Card 2 -->
+            <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-semibold">
+                            202
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">University Line</h3>
+                            <p class="text-gray-600">City Center → University Campus → Student Housing</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm text-gray-600 space-y-1">
+                            <p><i class="far fa-clock mr-2"></i>Every 20 mins</p>
+                            <p><i class="far fa-calendar mr-2"></i>Mon - Sat</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock mr-2 text-primary"></i>
+                                First bus: 6:00 AM
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock mr-2 text-primary"></i>
+                                Last bus: 10:00 PM
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-4 w-full bg-gray-50 text-primary font-medium py-2 rounded-lg hover:bg-gray-100 transition-colors">
+                        View Full Schedule
+                    </button>
+                </div>
+            </div>
+
+            <!-- Route Card 3 -->
+            <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-semibold">
+                            303
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">Shopping Circuit</h3>
+                            <p class="text-gray-600">Mall Central → Shopping District → Entertainment Zone</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm text-gray-600 space-y-1">
+                            <p><i class="far fa-clock mr-2"></i>Every 30 mins</p>
+                            <p><i class="far fa-calendar mr-2"></i>Mon - Sun</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock mr-2 text-primary"></i>
+                                First bus: 7:00 AM
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock mr-2 text-primary"></i>
+                                Last bus: 9:30 PM
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-4 w-full bg-gray-50 text-primary font-medium py-2 rounded-lg hover:bg-gray-100 transition-colors">
+                        View Full Schedule
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Route Map -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Route Map</h2>
+            <div class="aspect-w-16 aspect-h-9 bg-gray-100 rounded-lg">
+                <!-- Placeholder for map -->
+                <div class="w-full h-[400px] bg-gray-100 rounded-lg flex items-center justify-center">
+                    <p class="text-gray-500"><i class="fas fa-map-marked-alt text-4xl mb-2"></i><br>Interactive map coming soon</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About SmartBus</h3>
+                    <p class="text-gray-400">Making public transportation easier and more accessible for everyone.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Schedules</a></li>
+                        <li><a href="routes.html" class="text-gray-400 hover:text-white">Routes</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i> support@smartbus.com</li>
+                        <li class="text-gray-400"><i class="fas fa-phone mr-2"></i> (555) 123-4567</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2024 SmartBus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
